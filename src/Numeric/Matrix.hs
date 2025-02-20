@@ -497,7 +497,7 @@ class (Eq e, Num e) => MatrixElement e where
                               , j <- [1..numCols m]
                               , p (i,j) ]
 
-    at mat (i, j) = ((!! j) . (!! i) . toList) mat
+    at mat (i, j) = ((!! (j-1)) . (!! (i-1)) . toList) mat
     
     row i = (!! (i-1)) . toList
     col i = row i . transpose
